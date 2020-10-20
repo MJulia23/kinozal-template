@@ -1,0 +1,59 @@
+//оптимизация Bootstrap
+.navbar-inverse {
+    background-color: darken($color-dark, 4%); //цвет фона меню
+    .navbar-nav {
+        >.active>a {
+            background-color: $color-primary-dark; //взяли классы bootstrap и поменяли на свой цвет
+            &:focus,
+            &:hover {
+                background-color: $color-primary-light; //взяли классы bootstrap и поменяли на свой цвет, разделили с active, чтоб активный элемент при наведении менял цвет
+            }
+        }
+        >li>a {
+            //селектор для тега а в bootstrap , копируем и применяем анимацию
+            transition: background-color 0.5s; //устанавливаем время и свойство которое меняется
+            @include sm-min {
+                border-radius: 4px; // так как тег а блочный мы ему устанавливаем радиус
+            }
+            @include sm {
+                text-align: center;
+            }
+            &:focus,
+            &:hover {
+                background-color: $color-primary;
+            }
+        }
+    }
+}
+
+.navbar-header {
+    text-align: center; //кнопка строчный элемент, ставим ее по центру
+}
+
+.navbar-toggle {
+    float: none;
+    margin-right: 0px;
+}
+
+.navbar {
+    &-left {
+        @include sm-min {
+            li {
+                margin: 5px 5px 5px 0; //текст чтоб был по границам контейнера который сверху(Найти свое кино)
+            }
+        }
+        @include sm {
+            margin-bottom: 0; //убрали для того чтоб между меню не было разрывов    
+        }
+    }
+    &-right {
+        @include sm-min {
+            li {
+                margin: 5px 0 5px 5px;
+            }
+        }
+        @include sm {
+            margin-top: 0; //убрали для того чтоб между меню не было разрывов
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.header {
+    margin-bottom: $gap * 5.3333333;
+}
+
+.header-logo {
+    background-color: $color-dark;
+    background-image: url(../img/header-bg.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    text-align: center; // центрирую названия
+    padding: 100px 0; // только верх низ, так как bootstrap класс ставить падинги слева и справа и ограничивает контент
+    &__title {
+        display: block; //строчные элементы делаем блочными
+        color: $color-accent;
+        font-family: $font-header;
+        font-size: 3.5rem; //   56px/16px
+        letter-spacing: 0.33em;
+        @extend %text-shadow; //если не прогрузится фон ифоновое изображение, то текст без тени не увидим
+        @include xs-min {
+            font-size: 3.5rem;
+            letter-spacing: 0.33em;
+            margin-right: -$gap; // чтоб надпись была по центру нужно исключить отступ letter-spacing, так как 0.33em это треть 1 em
+        }
+        @include xs {
+            font-size: 2.5rem;
+            letter-spacing: 0.2em;
+            margin-right: -($gap /3);
+        }
+    }
+    &__description {
+        display: block; //строчные элементы делаем блочными
+        font-size: 1.15rem; // 18.4/16
+        letter-spacing: 0.2em;
+        color: $color-light;
+        @extend %text-shadow; //если не прогрузится фон ифоновое изображение, то текст без тени не увидим
+    }
+}

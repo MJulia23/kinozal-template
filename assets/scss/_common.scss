@@ -1,0 +1,9 @@
+html {
+    font-size: $font-size;
+    overflow-y: scroll;
+}
+
+body {
+    font-size: 1rem; //при наследовании от 16
+    font-family: $font-main; //потому что именно тут его прописал bootstrap
+}
