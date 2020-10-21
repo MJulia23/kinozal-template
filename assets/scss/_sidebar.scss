@@ -1,0 +1,7 @@
+// Собственная костомизация sidebar
+.left-sidebar {
+    @extend %margin-bottom-lg;
+    .panel:last-of-type {
+        margin-bottom: 0;
+    }
+}
