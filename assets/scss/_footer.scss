@@ -1,0 +1,23 @@
+.footer {
+    padding-top: $gap * 3;
+    color: #fbfbfb;
+    background-color: #232323;
+    font-family: $font-main;
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    a {
+        color: #777777;
+    }
+    &-fifth {
+        margin: 20px 0;
+        text-align: center;
+        span {
+            white-space: nowrap; //избежать разрывов между логически связаным текстом
+        }
+        a {
+            color: #fbfbfb;
+        }
+    }
+}

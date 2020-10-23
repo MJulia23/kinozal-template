@@ -1,3 +1,71 @@
 .main {
     @extend %margin-bottom-lg; //дублируем отступ как и в sidebar, для того чтоб если будет много контента, он не прижимался к низу
+    overflow: hidden;
+    .site-search {
+        margin-bottom: $gap * 3;
+    }
+    .user-login {
+        margin-bottom: $gap * 4;
+    }
+}
+
+.new-films,
+.top-week {
+    &-row {
+        margin-left: -$gap / 2;
+        margin-right: -$gap / 2;
+        margin-bottom: -$gap;
+    }
+    &-item {
+        padding-left: $gap / 2;
+        padding-right: $gap / 2;
+        margin-bottom: $gap;
+        &__title {
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        &__caption {
+            text-align: center;
+            padding: 7px;
+        }
+        &__thumbnail {
+            margin-bottom: 0;
+        }
+        &__image {
+            width: 100%;
+        }
+    }
+}
+
+.film-news-item {
+    margin-bottom: 0;
+    h3 {
+        font-size: 1rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: normal;
+        @include xs-min {
+            font-size: 1.5rem;
+        }
+        >a {
+            transition: color 0.25s;
+        }
+    }
+    &__text {
+        text-align: justify;
+    }
+    &__button {
+        float: right;
+        margin-bottom: $gap * 2;
+        transition: background-color 0.25s;
+    }
+    &__image {
+        width: 100%;
+    }
+    .thumbnail {
+        margin-bottom: 0;
+    }
 }

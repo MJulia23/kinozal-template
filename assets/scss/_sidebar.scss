@@ -5,3 +5,111 @@
         margin-bottom: 0;
     }
 }
+
+.vertical-slider {
+    border-radius: 4px; //не будет скругления так как изображение выходит за границы и его нужно ограничить     overflow: hidden;
+    overflow: hidden;
+    &__image {
+        width: 100%; //лучше чтоб картинка соответствовала контейнеру, чтоб не потерять разрешение
+    }
+}
+
+.user-login {
+    position: relative;
+    &__tabs {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        border: none;
+        a {
+            color: $color-gray;
+            border: none !important;
+            background-color: transparent !important;
+            padding: 14px 5px 11px !important;
+        }
+        .active>a {
+            color: $color-light !important;
+        }
+    }
+}
+
+.site-news-item {
+    position: relative;
+    clear: both; //блоки выровнялись
+    &:not(:last-child) {
+        min-height: 85px; //75px квадрат +10px снизу, чтб не проваливалось сквозь флоаты
+        margin-bottom: $gap;
+        &::after {
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+            width: calc(100% - 85px);
+            content: "";
+            height: 1px;
+            background-color: $color-gray;
+        }
+    }
+    &:hover {
+        a {
+            color: $color-accent;
+        }
+        .site-news-item__image {
+            background-color: $color-accent;
+            border-color: $color-accent;
+        }
+    }
+    &__image {
+        float: left;
+        width: 75px;
+        margin: 0 10px 10px 0;
+    }
+    &__title {
+        @include block-shortener($fz: 1rem, $lh: 1.5, $h: 50px, $l: 2);
+        margin-bottom: 10px;
+    }
+    &__date {
+        text-align: right;
+        font-size: 0.8rem;
+        color: darken($color-gray, 30%);
+    }
+}
+
+.top-films {
+    &__body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &__list {
+        margin-bottom: 0;
+    }
+    &__item {
+        background-color: transparent;
+        margin-right: -1px;
+        margin-left: -1px;
+        color: $color-primary !important;
+        padding-right: 55px;
+        &:first-child {
+            border-top: none;
+            border-radius: 0;
+        }
+        &:last-child {
+            border-bottom: none;
+            border-radius: 0;
+        }
+        &:hover,
+        &:focus {
+            color: $color-light;
+            background-color: $color-accent !important;
+            border-color: $color-accent;
+            .badge {
+                background-color: $color-dark;
+            }
+        }
+    }
+    &__badge {
+        position: absolute;
+        right: $gap;
+        top: 50%;
+        transform: translateY(-50%); //правильное смещение
+    }
+}

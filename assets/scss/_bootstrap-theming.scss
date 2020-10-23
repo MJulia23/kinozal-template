@@ -1,6 +1,7 @@
 //оптимизация Bootstrap
 .navbar-inverse {
     background-color: darken($color-dark, 4%); //цвет фона меню
+    margin-bottom: 0;
     .navbar-nav {
         >.active>a {
             background-color: $color-primary-dark; //взяли классы bootstrap и поменяли на свой цвет
@@ -76,4 +77,16 @@
         border: 1px solid $color-gray;
         border-radius: 0 0 4px 4px;
     }
+}
+
+.input {
+    &-lg,
+    &-group-lg>.form-control {
+        font-size: 0.875rem
+    }
+}
+
+.well {
+    border-color: #dddddd;
+    background-color: #f1f1f1;
 }

@@ -1,0 +1,26 @@
+.embed-responsive {
+    border: 1px solid #dddddd;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
+.film-info {
+    font-size: 1.2em; //если применить к WRAPPER смещение в пиксель идет
+    &__wrapper {
+        white-space: nowrap; //избежать разрывов между логически связаным текстом
+        &:not(:last-of-type) {
+            margin-right: $gap;
+        }
+    }
+    &__badge {
+        font-size: 0.8em;
+    }
+    &__well {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+.film-leave-comment__button {
+    float: right;
+}

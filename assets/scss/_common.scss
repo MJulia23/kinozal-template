@@ -1,3 +1,4 @@
+//ТИПОГРАФИКА
 html {
     font-size: $font-size;
     overflow-y: scroll;
@@ -6,4 +7,84 @@ html {
 body {
     font-size: 1rem; //при наследовании от 16
     font-family: $font-main; //потому что именно тут его прописал bootstrap
+}
+
+a {
+    color: $color-primary;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $color-accent;
+    }
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: -$gap / 2;
+    margin-bottom: $gap * 3;
+    font-family: $font-header;
+    font-size: 3rem;
+    @include xs {
+        margin: 0 0 30px;
+        font-size: 2rem;
+    }
+    // &::before {
+    //     position: absolute;
+    //     left: 0;
+    //     width: 30px;
+    //     margin: 0.25em 0 0 0;
+    //     content: "";
+    //     border-bottom: 3px solid rgba(240, 173, 79, 0.7);
+    //     @include xs {
+    //         display: none;
+    //     }
+    //     @include md {
+    //         margin: -7.5px 0 45px;
+    //         font-size: 3rem;
+    //     }
+    &::after {
+        position: absolute;
+        width: 100%;
+        margin: 0.85em 0 0 $gap;
+        content: "";
+        border-bottom: 3px solid rgba(240, 173, 79, 0.7);
+    }
+}
+
+h2 {
+    font-family: $font-header;
+    @include xs-min {
+        margin: 60px 0 45px 45px;
+        font-size: 2.5rem;
+        font-family: $font-header;
+    }
+    &::before {
+        position: absolute;
+        left: 0;
+        width: $gap * 2;
+        margin: 0.25em 0 0 0;
+        content: "";
+        border-bottom: 3px solid rgba(240, 173, 79, 0.7);
+    }
+    &::after {
+        position: absolute;
+        width: 100%;
+        margin: 0.85em 0 0 $gap;
+        content: "";
+        border-bottom: 3px solid rgba(240, 173, 79, 0.7);
+    }
+    @include xs {
+        margin: 45px 0 30px 45px;
+        font-size: 1.75rem;
+    }
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
 }
